@@ -19,7 +19,7 @@ class TestInvoiceEvent(common.TransactionCase):
         invoice_vals = {
             "partner_id": partner.id,
             "company_id": self.env.ref("base.main_company").id,
-            "type": "out_invoice",
+            "move_type": "out_invoice",
             "invoice_line_ids": [
                 (
                     0,
@@ -63,7 +63,7 @@ class TestInvoiceEvent(common.TransactionCase):
         mock_method = "odoo.addons.component_event.models.base.Base._event"
         with mock.patch(mock_method) as mock_event:
             self.assertEqual(self.invoice.state, "draft")
-            self.invoice.post()
+            self.invoice.action_post()
             self.assertEqual(self.invoice.state, "posted")
             register_payments = (
                 self.env["account.payment.register"]
@@ -71,5 +71,5 @@ class TestInvoiceEvent(common.TransactionCase):
                 .create({"journal_id": self.journal.id})
             )
             register_payments.create_payments()
-            self.assertEqual(self.invoice.invoice_payment_state, "paid")
+            self.assertEqual(self.invoice.payment_state, "paid")
             mock_event("on_invoice_paid").notify.assert_any_call(self.invoice)
