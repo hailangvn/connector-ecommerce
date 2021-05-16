@@ -1,0 +1,13 @@
+odoo14-addon-sale-automatic-workflow-payment-mode @git+https://github.com/hailangvn/sale-workflow@14.0-mig-sale_automatic_workflow_payment_mode#subdirectory=setup/sale_automatic_workflow_payment_mode
+odoo14-addon-connector-base-product @git+https://github.com/hailangvn/connector@14.0-mig-connector_base_product#subdirectory=setup/connector_base_product
+odoo14-addon-base-multi-image @git+https://github.com/hailangvn/server-tools@14.0-mig-base_multi_image#subdirectory=setup/base_multi_image
+odoo14-addon-queue-job @git+https://github.com/OCA/queue@14.0#subdirectory=setup/queue_job
+odoo14-addon-connector @git+https://github.com/OCA/connector@14.0#subdirectory=setup/connector
+odoo14-addon-product-multi-category @git+https://github.com/OCA/product-attribute@14.0#subdirectory=setup/product_multi_category
+odoo14-addon-component @git+https://github.com/OCA/connector@14.0#subdirectory=setup/component
+odoo14-addon-component-event @git+https://github.com/OCA/connector@14.0#subdirectory=setup/component_event
+odoo14-addon-account-payment-sale @git+https://github.com/OCA/bank-payment@14.0#subdirectory=setup/account_payment_sale
+odoo14-addon-account-payment-partner @git+https://github.com/OCA/bank-payment@14.0#subdirectory=setup/account_payment_partner
+odoo14-addon-account-payment-mode @git+https://github.com/OCA/bank-payment@14.0#subdirectory=setup/account_payment_mode
+odoo14-addon-sale-automatic-workflow @git+https://github.com/OCA/sale-workflow@14.0#subdirectory=setup/sale_automatic_workflow
+odoo14-addon-sale-exception @git+https://github.com/damdam-s/sale-workflow@14.0-mig-sale_exception_superseed#subdirectory=setup/sale_exception
