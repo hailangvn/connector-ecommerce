@@ -2,7 +2,7 @@
 # © 2018 FactorLibre
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-import mock
+from unittest import mock
 
 import odoo.tests.common as common
 
@@ -67,9 +67,11 @@ class TestInvoiceEvent(common.TransactionCase):
             self.assertEqual(self.invoice.state, "posted")
             register_payments = (
                 self.env["account.payment.register"]
-                .with_context(active_ids=self.invoice.ids)
+                .with_context(
+                    active_model='account.move', active_ids=self.invoice.ids
+                )
                 .create({"journal_id": self.journal.id})
             )
-            register_payments.create_payments()
+            register_payments._create_payments()
             self.assertEqual(self.invoice.payment_state, "paid")
             mock_event("on_invoice_paid").notify.assert_any_call(self.invoice)
